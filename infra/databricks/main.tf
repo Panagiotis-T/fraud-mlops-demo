@@ -15,11 +15,23 @@ provider "databricks" {
 resource "databricks_job" "fraud_train" {
   name = "fraud-mlops-demo-train"
 
+  job_cluster {
+    job_cluster_key = "job-cluster"
+
+    new_cluster {
+      spark_version = "13.3.x-scala2.12"
+      node_type_id  = "Standard_DS3_v2"
+      num_workers   = 1
+    }
+  }
+
   task {
     task_key = "train"
+
     notebook_task {
-      notebook_path = "/Repos/<your-user>/fraud-mlops-demo/notebooks/01_train_model"
+      notebook_path = "/Repos/panayiwths.ts@gmail.com/fraud-mlops-demo/notebooks/01_train_model"
     }
-    existing_cluster_id = var.cluster_id
+
+    job_cluster_key = "job-cluster"
   }
 }

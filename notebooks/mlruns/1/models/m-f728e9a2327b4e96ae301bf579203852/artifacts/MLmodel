@@ -1,0 +1,23 @@
+artifact_path: /Users/panagiotistsagkaroulis/Documents/Projects/fraud-mlops-demo/notebooks/mlruns/1/models/m-f728e9a2327b4e96ae301bf579203852/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.pkl
+    predict_fn: predict
+    python_version: 3.11.9
+  sklearn:
+    code: null
+    pickled_model: model.pkl
+    serialization_format: cloudpickle
+    sklearn_version: 1.8.0
+    skops_trusted_types: null
+mlflow_version: 3.10.0
+model_id: m-f728e9a2327b4e96ae301bf579203852
+model_size_bytes: 1577
+model_uuid: m-f728e9a2327b4e96ae301bf579203852
+prompts: null
+run_id: 27fdad94060045c4b19349cd1515f477
+utc_time_created: '2026-02-27 15:40:23.998622'
